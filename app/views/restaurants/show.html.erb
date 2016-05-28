@@ -1,5 +1,8 @@
 <p id="notice"><%= notice %></p>
-
+<% if @restaurant.image.file.nil? %> 
+<% else %>
+<%= image_tag @restaurant.image_url, class:"img-rounded" %>
+<% end %>
 <p>
   <strong>Name:</strong>
   <%= @restaurant.name %>

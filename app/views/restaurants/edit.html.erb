@@ -1,4 +1,8 @@
 <h1>Editing Restaurant</h1>
+<% if @restaurant.image.file.nil? %> 
+<% else %>
+  <%= image_tag @restaurant.image_url, class:"img-rounded", id:"logo" %>
+<% end %>
 
 <%= render 'form' %>
 

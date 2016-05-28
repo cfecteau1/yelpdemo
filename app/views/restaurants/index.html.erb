@@ -16,7 +16,12 @@
   <tbody>
     <% @restaurants.each do |restaurant| %>
       <tr>
-        <td><%= restaurant.name %></td>
+        <td>
+        <% if restaurant.image.file.nil? %> 
+        <% else %>
+          <%= image_tag restaurant.image_url, id:"thumb" %>
+        <% end %>
+        <%= restaurant.name %></td>
         <td><%= restaurant.address %></td>
         <td><%= restaurant.phone %></td>
         <td><%= restaurant.website %></td>
