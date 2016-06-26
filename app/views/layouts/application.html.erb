@@ -2,18 +2,22 @@
 <html>
 <head>
   <title>Yelpdemo</title>
+ 
+
   <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track' => true %>
   <%= javascript_include_tag 'application', 'data-turbolinks-track' => true %>
   <%= csrf_meta_tags %>
   <meta name="viewport" content="width=device-width">
-
-  <%= render partial: "layouts/bootstrap" %>
+ <%= render partial: "layouts/bootstrap" %>
 
 </head>
 <body>
 <%= render partial: "layouts/navbar" %>
 
 <div class="container-fluid">
+	<p class="notice"><%= notice %></p>
+    <p class="alert"><%= alert %></p>
+
 <%= yield %>
 </div>
 
