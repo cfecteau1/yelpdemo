@@ -32,15 +32,21 @@
         <li><%= link_to "Home", pages_contact_path, class:"wht-fnt" %></li>
         <li><%= link_to "About Me", pages_about_path, class:"wht-fnt" %></li>
         <li><a href="#">Write a Review</a></li>
-        <li><a>Find Friends</a></li>
+        <li><a href="#">Find Friends</a></li>
         <li><%= link_to "Messages", pages_about_path, class:"wht-fnt" %></li>
         <li><%= link_to "Talk", pages_contact_path, class:"wht-fnt" %></li>
         <li><%= link_to "Events", root_path, class:"wht-fnt" %></li>
       </ul>
       <ul class="user-btns">
-        <a href="#" id="signup" class="btn btn-default btn-user">Sign Up</a>
-        <a href="#" class="btn-user">Log In</a>
-      </ul
+      <% if !signed_in? %>
+        <a href="/users/sign_up" id="signup" class="btn btn-default btn-user">Sign Up</a>
+        <a href="/users/sign_in" class="btn-user">Log In</a>
+      <% else %>
+        <!--<a href="/users/sign_out#destroy" class="btn btn-default btn-user">Log Off</a>-->
+        <%= link_to 'Sign out', destroy_user_session_path, :method => :delete, id:"signup", class:"btn btn-default btn-user" %>
+        <a href="#">View Profile</a>
+      <% end %>
+      </ul>
     </div><!-- /.navbar-collapse -->
   </div><!-- /.container-fluid -->
 </nav>
