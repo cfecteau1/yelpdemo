@@ -13,7 +13,7 @@
 
   <div class="field">
     <%= f.label :rating %><br>
-    <%= f.number_field :rating %>
+    <%= f.number_field(:rating, in: 1..5, step: 1) %>
   </div>
   <div class="field">
     <%= f.label :comment %><br>

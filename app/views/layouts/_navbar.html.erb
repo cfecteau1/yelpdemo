@@ -31,7 +31,7 @@
       <ul id="links" class="nav navbar-nav">
         <li><%= link_to "Home", pages_contact_path, class:"wht-fnt" %></li>
         <li><%= link_to "About Me", pages_about_path, class:"wht-fnt" %></li>
-        <li><a href="#">Write a Review</a></li>
+        <li><%= link_to "Write a Review", new_review_path %></li>
         <li><a href="#">Find Friends</a></li>
         <li><%= link_to "Messages", pages_about_path, class:"wht-fnt" %></li>
         <li><%= link_to "Talk", pages_contact_path, class:"wht-fnt" %></li>
@@ -44,7 +44,7 @@
       <% else %>
         <!--<a href="/users/sign_out#destroy" class="btn btn-default btn-user">Log Off</a>-->
         <%= link_to 'Sign out', destroy_user_session_path, :method => :delete, id:"signup", class:"btn btn-default btn-user" %>
-        <a href="#">View Profile</a>
+        <a href="#" id="vpro">View Profile</a>
       <% end %>
       </ul>
     </div><!-- /.navbar-collapse -->
