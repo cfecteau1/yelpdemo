@@ -1,7 +1,8 @@
 Rails.application.routes.draw do
-  resources :reviews
-  devise_for :users
-  resources :restaurants
+   devise_for :users
+  resources :restaurants do
+     resources :reviews, except: [:show, :index]
+   end
   get 'pages/contact'
 
   get 'pages/about'
